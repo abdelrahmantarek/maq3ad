@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#05080f" />
+    <meta name="description" content="احجز مقعدك في الملعب وشاهد المنظر من المقعد قبل الحجز." />
+    <title>مقعد — احجز مقعدك وشاهد المنظر قبل الحجز</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body data-mode="stadium">
+    <div id="scene" role="img"></div>
+
+    <div class="ui">
+      <header class="topbar panel">
+        <div class="fixture">
+          <div class="teams">
+            <span class="team"><i class="dot" id="homeDot"></i><b id="homeName"></b></span>
+            <span class="vs" id="vs"></span>
+            <span class="team"><i class="dot" id="awayDot"></i><b id="awayName"></b></span>
+          </div>
+          <p class="meta" id="fixtureMeta"></p>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn ghost" id="langBtn" type="button" data-action="lang"></button>
+          <button class="btn primary" id="basketBtn" type="button" data-action="toggle-drawer">
+            <span id="basketLabel"></span><span class="badge" id="basketCount">0</span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="crumbs panel" id="crumbsNav"><ol id="crumbs"></ol></nav>
+
+      <div class="tools panel">
+        <button class="btn ghost" id="rotateBtn" type="button" data-action="rotate" aria-pressed="false"></button>
+        <button class="btn ghost" id="tourBtn" type="button" data-action="tour"></button>
+        <button class="btn ghost" id="resetBtn" type="button" data-action="reset"></button>
+      </div>
+
+      <section class="legend panel" aria-labelledby="legendTitle">
+        <h2 id="legendTitle"></h2>
+        <ul id="legend"></ul>
+        <p class="note" id="legendHint"></p>
+      </section>
+
+      <section class="minimap panel" aria-labelledby="minimapTitle">
+        <h2 id="minimapTitle"></h2>
+        <svg id="minimap" dir="ltr"></svg>
+      </section>
+
+      <section class="card panel" id="card" hidden></section>
+      <aside class="drawer panel" id="drawer" hidden></aside>
+
+      <p class="hint" id="hint" role="status" aria-live="polite"></p>
+      <div class="tooltip" id="tooltip" hidden></div>
+      <div class="toast" id="toast" role="alert" hidden></div>
+    </div>
+
+    <dialog class="dialog panel" id="dialog"></dialog>
+
+    <noscript>يحتاج هذا الموقع إلى JavaScript ليعمل. This site needs JavaScript.</noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
